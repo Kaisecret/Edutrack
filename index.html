@@ -23,19 +23,18 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm fixed-top">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-                    <img src="logoo.png" alt="EduTrack Logo" style="height: 36px; width: 200px; object-fit: contain;">
-                    <span class="fw-bold fs-4 text-primary"></span>
+                    <img src="logoo.png" alt="EduTrack Logo" style="height: 50px; width: 250px; object-fit: contain;">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto gap-2 align-items-center">
-                        <li class="nav-item"><a class="nav-link fw-medium" href="#features">Features</a></li>
-                        <li class="nav-item"><a class="nav-link fw-medium" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link fw-medium" href="#testimonials">Testimonials</a></li>
-                        <li class="nav-item">
-                            <button class="btn btn-primary px-4 rounded-pill" onclick="switchView('view-auth')">Login to Portal</button>
+                        <li class="nav-item"><a class="nav-link fw-medium px-3" href="#features">Solutions</a></li>
+                        <li class="nav-item"><a class="nav-link fw-medium px-3" href="#about">Discover</a></li>
+                        <li class="nav-item"><a class="nav-link fw-medium px-3" href="#testimonials">Success Stories</a></li>
+                        <li class="nav-item ms-lg-2">
+                            <button class="btn btn-primary px-4 rounded-pill shadow-sm" onclick="switchView('view-auth')"><i class="fas fa-sign-in-alt me-2"></i>Login to Portal</button>
                         </li>
                     </ul>
                 </div>
@@ -44,23 +43,69 @@
 
         <!-- Hero Section -->
         <div class="hero-section">
-            <div class="container">
-                <div class="row align-items-center">
+            <div class="hero-particles"></div>
+            <div class="container position-relative">
+                <div class="row align-items-center min-vh-hero">
                     <div class="col-lg-6 mb-5 mb-lg-0">
-                        <span class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 rounded-pill fw-semibold">🎓 Smart Education Ecosystem</span>
-                        <h1 class="display-4 fw-800 mb-4 text-dark">Empowering Education Through <span class="text-primary">Data & AI</span></h1>
-                        <p class="lead text-muted mb-4" style="font-size:1.1rem;">EduTrack is a next-generation student performance monitoring system that connects students, teachers, parents, and administrators with real-time analytics and personalized insights.</p>
-                        <div class="d-flex gap-3 flex-wrap">
-                            <button class="btn btn-primary btn-lg px-4 rounded-pill shadow" onclick="switchView('view-auth')"><i class="fas fa-rocket me-2"></i>Get Started Free</button>
-                            <button class="btn btn-outline-dark btn-lg px-4 rounded-pill" onclick="showToast('Demo', 'Loading interactive demo...', 'primary')"><i class="fas fa-play me-2"></i>Watch Demo</button>
-                        </div>
-                        <div class="d-flex gap-4 mt-4 text-muted small">
-                            <span><i class="fas fa-check-circle text-success me-1"></i>No credit card required</span>
-                            <span><i class="fas fa-check-circle text-success me-1"></i>Free for schools</span>
+                        <div class="hero-content">
+                            <span class="badge bg-white text-primary mb-4 px-3 py-2 rounded-pill fw-semibold shadow-sm landing-badge">Smart Education Ecosystem</span>
+                            <h1 class="display-3 fw-800 mb-4 text-dark lh-1">Empowering Education Through <span class="text-gradient">Data & AI</span></h1>
+                            <p class="lead text-muted mb-4" style="font-size:1.15rem; line-height:1.8;">EduTrack is a next-generation student performance monitoring system that connects students, teachers, parents, and administrators with real-time analytics and personalized insights.</p>
+                            <div class="d-flex gap-3 flex-wrap mb-4">
+                                <button class="btn btn-primary btn-lg px-5 rounded-pill shadow-lg hero-btn" onclick="switchView('view-auth')"><i class="fas fa-rocket me-2"></i>Get Started Free</button>
+                                <button class="btn btn-outline-dark btn-lg px-4 rounded-pill" onclick="showToast('Demo', 'Loading interactive demo...', 'primary')"><i class="fas fa-play-circle me-2"></i>Watch Demo</button>
+                            </div>
+                            <div class="d-flex gap-4 text-muted small">
+                                <span><i class="fas fa-check-circle text-success me-1"></i>No credit card required</span>
+                                <span><i class="fas fa-check-circle text-success me-1"></i>Free for schools</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop" alt="Students learning" class="hero-img">
+                    <div class="col-lg-6 d-none d-lg-block">
+                        <div class="hero-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop" alt="Students learning" class="hero-img">
+                            <div class="hero-floating-card hero-float-1">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="bg-success rounded-circle d-flex align-items-center justify-content-center" style="width:36px;height:36px;"><i class="fas fa-chart-line text-white" style="font-size:0.85rem;"></i></div>
+                                    <div>
+                                        <div class="fw-bold small">GPA Average</div>
+                                        <div class="text-success fw-800">3.88</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero-floating-card hero-float-2">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" style="width:36px;height:36px;"><i class="fas fa-users text-white" style="font-size:0.85rem;"></i></div>
+                                    <div>
+                                        <div class="fw-bold small">Active Users</div>
+                                        <div class="text-primary fw-800">10,000+</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trusted By Bar -->
+        <div class="trusted-bar">
+            <div class="container">
+                <div class="text-center mb-3">
+                    <span class="text-muted small fw-semibold text-uppercase letter-spacing-2">Trusted by leading institutions</span>
+                </div>
+                <div class="row text-center g-4 align-items-center justify-content-center">
+                    <div class="col-6 col-md-3">
+                        <div class="trusted-logo"><i class="fas fa-university me-2"></i>State University</div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="trusted-logo"><i class="fas fa-graduation-cap me-2"></i>TechEd Academy</div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="trusted-logo"><i class="fas fa-school me-2"></i>Global Schools</div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="trusted-logo"><i class="fas fa-book-reader me-2"></i>EduCorp</div>
                     </div>
                 </div>
             </div>
@@ -71,18 +116,22 @@
             <div class="container">
                 <div class="row text-center g-4">
                     <div class="col-6 col-md-3 stat-item">
+                        <div class="stat-icon-circle mx-auto mb-2"><i class="fas fa-user-graduate"></i></div>
                         <h2 class="fw-800 text-white mb-1">10,000+</h2>
                         <p class="mb-0 text-white-50">Active Students</p>
                     </div>
                     <div class="col-6 col-md-3 stat-item">
+                        <div class="stat-icon-circle mx-auto mb-2"><i class="fas fa-school"></i></div>
                         <h2 class="fw-800 text-white mb-1">500+</h2>
                         <p class="mb-0 text-white-50">Schools Partnered</p>
                     </div>
                     <div class="col-6 col-md-3 stat-item">
+                        <div class="stat-icon-circle mx-auto mb-2"><i class="fas fa-heart"></i></div>
                         <h2 class="fw-800 text-white mb-1">95%</h2>
                         <p class="mb-0 text-white-50">Satisfaction Rate</p>
                     </div>
                     <div class="col-6 col-md-3 stat-item">
+                        <div class="stat-icon-circle mx-auto mb-2"><i class="fas fa-headset"></i></div>
                         <h2 class="fw-800 text-white mb-1">24/7</h2>
                         <p class="mb-0 text-white-50">Support Available</p>
                     </div>
@@ -94,51 +143,51 @@
         <div id="features" class="py-5" style="background:linear-gradient(180deg,#f8fafc,#fff);">
             <div class="container py-5">
                 <div class="text-center mb-5">
-                    <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-3">Features</span>
+                    <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-3">Solutions</span>
                     <h2 class="fw-800 display-6">Everything you need to succeed</h2>
-                    <p class="text-muted mx-auto" style="max-width:550px;">Comprehensive tools designed for modern educational institutions to track, analyze, and improve student performance.</p>
+                    <p class="text-muted mx-auto" style="max-width:600px;">Comprehensive tools designed for modern educational institutions to track, analyze, and improve student performance.</p>
                 </div>
-                <div class="row g-4">
-                    <div class="col-md-4">
+                <div class="row g-4 stagger-in">
+                    <div class="col-md-6 col-lg-4">
                         <div class="feature-card text-center">
-                            <div class="feature-icon-box bg-primary bg-opacity-10 text-primary mx-auto"><i class="fas fa-chart-line"></i></div>
+                            <div class="feature-icon-box bg-primary bg-opacity-10 text-primary mx-auto"><i class="fas fa-arrow-trend-up"></i></div>
                             <h5 class="fw-bold mb-2">Real-time Analytics</h5>
-                            <p class="text-muted small">Track performance trends, attendance, and grades instantly through intuitive dashboards and interactive charts.</p>
+                            <p class="text-muted small mb-0">Track performance trends, attendance, and grades instantly through intuitive dashboards and interactive charts.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="feature-card text-center">
                             <div class="feature-icon-box bg-success bg-opacity-10 text-success mx-auto"><i class="fas fa-brain"></i></div>
                             <h5 class="fw-bold mb-2">AI Study Insights</h5>
-                            <p class="text-muted small">Get personalized learning recommendations and identify areas for improvement using advanced AI algorithms.</p>
+                            <p class="text-muted small mb-0">Get personalized learning recommendations and identify areas for improvement using advanced AI algorithms.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="feature-card text-center">
                             <div class="feature-icon-box bg-warning bg-opacity-10 text-warning mx-auto"><i class="fas fa-users"></i></div>
                             <h5 class="fw-bold mb-2">Unified Platform</h5>
-                            <p class="text-muted small">Seamlessly connect students, teachers, and parents in one collaborative environment with role-based access.</p>
+                            <p class="text-muted small mb-0">Seamlessly connect students, teachers, and parents in one collaborative environment with role-based access.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="feature-card text-center">
                             <div class="feature-icon-box bg-danger bg-opacity-10 text-danger mx-auto"><i class="fas fa-bell"></i></div>
                             <h5 class="fw-bold mb-2">Smart Alerts</h5>
-                            <p class="text-muted small">Automated notifications for low grades, absences, upcoming deadlines, and at-risk student detection.</p>
+                            <p class="text-muted small mb-0">Automated notifications for low grades, absences, upcoming deadlines, and at-risk student detection.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="feature-card text-center">
-                            <div class="feature-icon-box bg-info bg-opacity-10 mx-auto" style="color:#6366f1;"><i class="fas fa-file-alt"></i></div>
+                            <div class="feature-icon-box bg-info bg-opacity-10 text-info mx-auto"><i class="fas fa-file-alt"></i></div>
                             <h5 class="fw-bold mb-2">Automated Reports</h5>
-                            <p class="text-muted small">Generate comprehensive academic reports with one click. Export to PDF for parent-teacher conferences.</p>
+                            <p class="text-muted small mb-0">Generate comprehensive academic reports with one click. Export to PDF for parent-teacher conferences.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="feature-card text-center">
-                            <div class="feature-icon-box bg-secondary bg-opacity-10 mx-auto" style="color:#0ea5e9;"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="feature-icon-box bg-secondary bg-opacity-10 text-secondary-custom mx-auto"><i class="fas fa-mobile-alt"></i></div>
                             <h5 class="fw-bold mb-2">Mobile Responsive</h5>
-                            <p class="text-muted small">Access your dashboard anywhere on any device. Optimized for desktop, tablet, and smartphone screens.</p>
+                            <p class="text-muted small mb-0">Access your dashboard anywhere on any device. Optimized for desktop, tablet, and smartphone screens.</p>
                         </div>
                     </div>
                 </div>
@@ -150,55 +199,66 @@
             <div class="container py-5">
                 <div class="row align-items-center g-5">
                     <div class="col-lg-6">
-                        <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-3">About EduTrack</span>
+                        <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-3">Discover EduTrack</span>
                         <h2 class="fw-800 display-6 mb-4">Transforming education with technology</h2>
-                        <p class="text-muted mb-4">EduTrack was built to solve the persistent challenges in educational institutions: disconnected records, delayed feedback, manual grading processes, and lack of data-driven insights.</p>
-                        <div class="row g-3">
+                        <p class="text-muted mb-4" style="line-height:1.8;">EduTrack was built to solve the persistent challenges in educational institutions: disconnected records, delayed feedback, manual grading processes, and lack of data-driven insights.</p>
+                        <div class="row g-3 mb-4">
                             <div class="col-6">
-                                <div class="d-flex align-items-start gap-2">
-                                    <i class="fas fa-check-circle text-success mt-1"></i>
+                                <div class="about-check-item">
+                                    <div class="about-check-icon"><i class="fas fa-check"></i></div>
                                     <span class="small fw-medium">Centralized monitoring</span>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="d-flex align-items-start gap-2">
-                                    <i class="fas fa-check-circle text-success mt-1"></i>
+                                <div class="about-check-item">
+                                    <div class="about-check-icon"><i class="fas fa-check"></i></div>
                                     <span class="small fw-medium">AI-powered insights</span>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="d-flex align-items-start gap-2">
-                                    <i class="fas fa-check-circle text-success mt-1"></i>
+                                <div class="about-check-item">
+                                    <div class="about-check-icon"><i class="fas fa-check"></i></div>
                                     <span class="small fw-medium">Role-based dashboards</span>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="d-flex align-items-start gap-2">
-                                    <i class="fas fa-check-circle text-success mt-1"></i>
+                                <div class="about-check-item">
+                                    <div class="about-check-icon"><i class="fas fa-check"></i></div>
                                     <span class="small fw-medium">Parent communication</span>
                                 </div>
                             </div>
                         </div>
+                        <button class="btn btn-primary rounded-pill px-4" onclick="switchView('view-auth')"><i class="fas fa-arrow-right me-2"></i>Start Using EduTrack</button>
                     </div>
                     <div class="col-lg-6">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" alt="Team collaboration" class="img-fluid rounded-4 shadow-lg">
+                        <div class="about-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" alt="Team collaboration" class="img-fluid rounded-4 shadow-lg">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Testimonials -->
-        <div id="testimonials" class="py-5" style="background:var(--bg);">
+        <div id="testimonials" class="py-5" style="background:linear-gradient(135deg,#f8fafc 0%,#e0e7ff 100%);">
             <div class="container py-5">
                 <div class="text-center mb-5">
-                    <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-3">Testimonials</span>
+                    <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-3">Success Stories</span>
                     <h2 class="fw-800 display-6">Loved by educators worldwide</h2>
+                    <p class="text-muted mx-auto" style="max-width:500px;">See what our users are saying about their experience with EduTrack.</p>
                 </div>
-                <div class="row g-4">
+                <div class="row g-4 stagger-in">
                     <div class="col-md-4">
-                        <div class="testimonial-card h-100">
-                            <p class="text-muted mt-4 mb-3">"EduTrack has completely transformed how we monitor student progress. The AI insights have helped us identify at-risk students early."</p>
-                            <div class="d-flex align-items-center gap-3">
+                    <div class="testimonial-card h-100 d-flex flex-column">
+                            <div class="testimonial-stars mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="text-muted mb-4">"EduTrack has completely transformed how we monitor student progress. The AI insights have helped us identify at-risk students early."</p>
+                            <div class="d-flex align-items-center gap-3 mt-auto">
                                 <img src="https://ui-avatars.com/api/?name=Sarah+Mitchell&background=4f46e5&color=fff" class="avatar-md">
                                 <div>
                                     <h6 class="fw-bold mb-0">Sarah Mitchell</h6>
@@ -208,9 +268,16 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="testimonial-card h-100">
-                            <p class="text-muted mt-4 mb-3">"As a parent, I love being able to see my child's grades and attendance in real-time. The teacher feedback feature is amazing!"</p>
-                            <div class="d-flex align-items-center gap-3">
+                    <div class="testimonial-card h-100 d-flex flex-column">
+                            <div class="testimonial-stars mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="text-muted mb-4">"As a parent, I love being able to see my child's grades and attendance in real-time. The teacher feedback feature is amazing!"</p>
+                            <div class="d-flex align-items-center gap-3 mt-auto">
                                 <img src="https://ui-avatars.com/api/?name=David+Kim&background=10b981&color=fff" class="avatar-md">
                                 <div>
                                     <h6 class="fw-bold mb-0">David Kim</h6>
@@ -220,9 +287,16 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="testimonial-card h-100">
-                            <p class="text-muted mt-4 mb-3">"The grade management and attendance tracking saves me hours every week. I can focus more on teaching and less on paperwork."</p>
-                            <div class="d-flex align-items-center gap-3">
+                    <div class="testimonial-card h-100 d-flex flex-column">
+                            <div class="testimonial-stars mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                            </div>
+                            <p class="text-muted mb-4">"The grade management and attendance tracking saves me hours every week. I can focus more on teaching and less on paperwork."</p>
+                            <div class="d-flex align-items-center gap-3 mt-auto">
                                 <img src="https://ui-avatars.com/api/?name=Prof+Garcia&background=f59e0b&color=fff" class="avatar-md">
                                 <div>
                                     <h6 class="fw-bold mb-0">Prof. Garcia</h6>
@@ -231,6 +305,17 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <div class="container">
+                <div class="cta-card text-center">
+                    <h2 class="fw-800 display-6 text-white mb-3">Ready to transform your institution?</h2>
+                    <p class="text-white-50 mb-4 mx-auto" style="max-width:500px;">Join thousands of schools already using EduTrack to improve student outcomes with data-driven insights.</p>
+                    <button class="btn btn-light btn-lg px-5 rounded-pill fw-bold shadow" onclick="switchView('view-auth')"><i class="fas fa-rocket me-2"></i>Get Started Now</button>
                 </div>
             </div>
         </div>
@@ -244,18 +329,18 @@
                             <img src="logo.png" alt="EduTrack Logo" style="height: 36px; object-fit: contain;">
                             <span class="fw-bold fs-5 text-white">EduTrack</span>
                         </div>
-                        <p class="small mb-3">Smart Student Performance Monitoring System. Empowering education through data-driven insights and AI-powered analytics.</p>
+                        <p class="small mb-3" style="line-height:1.7;">Smart Student Performance Monitoring System. Empowering education through data-driven insights and AI-powered analytics.</p>
                         <div class="d-flex gap-3">
-                            <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="text-white"><i class="fab fa-github"></i></a>
+                            <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="footer-social-icon"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                     <div class="col-6 col-lg-2">
                         <h6 class="text-white fw-bold mb-3">Product</h6>
                         <ul class="list-unstyled small">
-                            <li class="mb-2"><a href="#features">Features</a></li>
+                            <li class="mb-2"><a href="#features">Solutions</a></li>
                             <li class="mb-2"><a href="#">Pricing</a></li>
                             <li class="mb-2"><a href="#">Documentation</a></li>
                             <li class="mb-2"><a href="#">API</a></li>
@@ -264,7 +349,7 @@
                     <div class="col-6 col-lg-2">
                         <h6 class="text-white fw-bold mb-3">Company</h6>
                         <ul class="list-unstyled small">
-                            <li class="mb-2"><a href="#about">About</a></li>
+                            <li class="mb-2"><a href="#about">Discover</a></li>
                             <li class="mb-2"><a href="#">Careers</a></li>
                             <li class="mb-2"><a href="#">Blog</a></li>
                             <li class="mb-2"><a href="#">Contact</a></li>
