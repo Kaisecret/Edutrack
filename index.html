@@ -18,14 +18,14 @@
 <div id="app">
 
     <!-- ================= LANDING PAGE ================= -->
-    <section id="view-landing" class="view active">
+    <section id="view-landing" class="view active" style="display: block;">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm fixed-top landing-navbar">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-                    <img src="logoo.png" alt="EduTrack Logo" style="height: 50px; width: 250px; object-fit: contain;">
+                <a class="navbar-brand d-flex align-items-center gap-2 landing-brand" href="#">
+                    <img src="logo.png" alt="EduTrack Logo" class="landing-brand-logo">
                 </a>
-                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <button class="navbar-toggler border-0 shadow-none landing-nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -52,8 +52,8 @@
                             <h1 class="display-3 fw-800 mb-4 text-dark lh-1">Empowering Education Through <span class="text-gradient">Data & AI</span></h1>
                             <p class="lead text-muted mb-4" style="font-size:1.15rem; line-height:1.8;">EduTrack is a next-generation student performance monitoring system that connects students, teachers, parents, and administrators with real-time analytics and personalized insights.</p>
                             <div class="d-flex gap-3 flex-wrap mb-4">
-                                <button class="btn btn-primary btn-lg px-5 rounded-pill shadow-lg hero-btn" onclick="switchView('view-auth')"><i class="fas fa-rocket me-2"></i>Get Started Free</button>
-                                <button class="btn btn-outline-dark btn-lg px-4 rounded-pill" onclick="showToast('Demo', 'Loading interactive demo...', 'primary')"><i class="fas fa-play-circle me-2"></i>Watch Demo</button>
+                                <button class="btn btn-primary btn-lg px-5 rounded-pill shadow-lg hero-btn hero-cta-btn" onclick="switchView('view-auth')"><i class="fas fa-rocket"></i><span>Get Started Free</span></button>
+                                <button class="btn btn-outline-dark btn-lg px-4 rounded-pill hero-secondary-btn" onclick="showToast('Demo', 'Loading interactive demo...', 'primary')"><i class="fas fa-play-circle"></i><span>Watch Demo</span></button>
                             </div>
                             <div class="d-flex gap-4 text-muted small">
                                 <span><i class="fas fa-check-circle text-success me-1"></i>No credit card required</span>
@@ -149,43 +149,43 @@
                 </div>
                 <div class="row g-4 stagger-in">
                     <div class="col-md-6 col-lg-4">
-                        <div class="feature-card text-center">
-                            <div class="feature-icon-box bg-primary bg-opacity-10 text-primary mx-auto"><i class="fas fa-arrow-trend-up"></i></div>
+                        <div class="feature-card-new text-center">
+                            <div class="feature-icon-new mx-auto" style="background:#4f46e5;"><i class="fas fa-chart-line"></i></div>
                             <h5 class="fw-bold mb-2">Real-time Analytics</h5>
                             <p class="text-muted small mb-0">Track performance trends, attendance, and grades instantly through intuitive dashboards and interactive charts.</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <div class="feature-card text-center">
-                            <div class="feature-icon-box bg-success bg-opacity-10 text-success mx-auto"><i class="fas fa-brain"></i></div>
+                        <div class="feature-card-new text-center">
+                            <div class="feature-icon-new mx-auto" style="background:#10b981;"><i class="fas fa-brain"></i></div>
                             <h5 class="fw-bold mb-2">AI Study Insights</h5>
                             <p class="text-muted small mb-0">Get personalized learning recommendations and identify areas for improvement using advanced AI algorithms.</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <div class="feature-card text-center">
-                            <div class="feature-icon-box bg-warning bg-opacity-10 text-warning mx-auto"><i class="fas fa-users"></i></div>
+                        <div class="feature-card-new text-center">
+                            <div class="feature-icon-new mx-auto" style="background:#f59e0b;"><i class="fas fa-users"></i></div>
                             <h5 class="fw-bold mb-2">Unified Platform</h5>
                             <p class="text-muted small mb-0">Seamlessly connect students, teachers, and parents in one collaborative environment with role-based access.</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <div class="feature-card text-center">
-                            <div class="feature-icon-box bg-danger bg-opacity-10 text-danger mx-auto"><i class="fas fa-bell"></i></div>
+                        <div class="feature-card-new text-center">
+                            <div class="feature-icon-new mx-auto" style="background:#ef4444;"><i class="fas fa-bell"></i></div>
                             <h5 class="fw-bold mb-2">Smart Alerts</h5>
                             <p class="text-muted small mb-0">Automated notifications for low grades, absences, upcoming deadlines, and at-risk student detection.</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <div class="feature-card text-center">
-                            <div class="feature-icon-box bg-info bg-opacity-10 text-info mx-auto"><i class="fas fa-file-alt"></i></div>
+                        <div class="feature-card-new text-center">
+                            <div class="feature-icon-new mx-auto" style="background:#6366f1;"><i class="fas fa-file-alt"></i></div>
                             <h5 class="fw-bold mb-2">Automated Reports</h5>
                             <p class="text-muted small mb-0">Generate comprehensive academic reports with one click. Export to PDF for parent-teacher conferences.</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">
-                        <div class="feature-card text-center">
-                            <div class="feature-icon-box bg-secondary bg-opacity-10 text-secondary-custom mx-auto"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="feature-card-new text-center">
+                            <div class="feature-icon-new mx-auto" style="background:#0ea5e9;"><i class="fas fa-mobile-alt"></i></div>
                             <h5 class="fw-bold mb-2">Mobile Responsive</h5>
                             <p class="text-muted small mb-0">Access your dashboard anywhere on any device. Optimized for desktop, tablet, and smartphone screens.</p>
                         </div>
@@ -377,14 +377,14 @@
     </section>
 
     <!-- ================= AUTHENTICATION PAGE ================= -->
-    <section id="view-auth" class="view">
+    <section id="view-auth" class="view" style="display: none;">
         <div class="auth-overlay"></div>
-        <div class="container h-100 position-relative" style="z-index: 2;">
-            <div class="row h-100 justify-content-center align-items-center">
-                <div class="col-12 col-md-8 col-lg-5 d-flex flex-column align-items-center">
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row justify-content-center align-items-center" style="min-height:100vh;">
+                <div class="col-12 col-md-8 col-lg-5 d-flex flex-column align-items-center py-4">
 
                     <!-- LOGIN FORM -->
-                    <div id="auth-login" class="auth-card mx-auto text-center auth-form active">
+                    <div id="auth-login" class="auth-card mx-auto text-center auth-form active" style="display: block;">
                         <div class="mb-4">
                             <img src="logo.png" alt="EduTrack Logo" style="height: 64px; margin-bottom: 1rem; object-fit: contain;">
                             <h3 class="fw-bold">Welcome to EduTrack</h3>
@@ -429,7 +429,7 @@
                     </div>
 
                     <!-- SIGN UP FORM -->
-                    <div id="auth-signup" class="auth-card mx-auto text-center auth-form">
+                    <div id="auth-signup" class="auth-card mx-auto text-center auth-form" style="display: none;">
                         <div class="mb-4">
                             <div class="bg-success text-white rounded d-inline-block p-3 mb-3"><i class="fas fa-user-plus fa-2x"></i></div>
                             <h3 class="fw-bold">Create Account</h3>
@@ -475,7 +475,7 @@
                     </div>
 
                     <!-- FORGOT PASSWORD FORM -->
-                    <div id="auth-forgot" class="auth-card text-center auth-form">
+                    <div id="auth-forgot" class="auth-card text-center auth-form" style="display: none;">
                         <div class="mb-4">
                             <div class="bg-warning text-white rounded d-inline-block p-3 mb-3"><i class="fas fa-key fa-2x"></i></div>
                             <h3 class="fw-bold">Reset Password</h3>
@@ -499,9 +499,9 @@
     </section>
 
     <!-- ================= DASHBOARD LAYOUT ================= -->
-    <section id="view-dashboard" class="view">
+    <section id="view-dashboard" class="view" style="display: none;">
         <div id="dashboard-layout">
-            <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+            <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()" style="display: none;"></div>
             <!-- Sidebar -->
             <nav id="sidebar">
                 <div class="sidebar-brand">
@@ -549,7 +549,7 @@
                         </div>
                     </div>
                     <!-- Notification Dropdown -->
-                    <div class="notification-dropdown" id="notifDropdown">
+                    <div class="notification-dropdown" id="notifDropdown" style="display: none;">
                         <div class="notif-header">
                             <h6 class="fw-bold mb-0">Notifications</h6>
                             <button class="btn btn-sm btn-link text-primary p-0 text-decoration-none" onclick="markAllRead()">Mark all read</button>
@@ -569,6 +569,23 @@
         </div>
     </section>
 </div>
+
+    <!-- ================= LOGOUT CONFIRMATION MODAL ================= -->
+    <div id="logoutModal" class="logout-modal-overlay" style="display:none;">
+        <div class="logout-modal-box">
+            <div class="mb-3">
+                <div class="bg-danger bg-opacity-10 text-danger rounded-circle d-inline-flex align-items-center justify-content-center" style="width:64px;height:64px;">
+                    <i class="fas fa-sign-out-alt fa-2x"></i>
+                </div>
+            </div>
+            <h4 class="fw-bold mb-2">Logout Confirmation</h4>
+            <p class="text-muted mb-4">Are you sure you want to log out of your account? You will need to sign in again to access your dashboard.</p>
+            <div class="d-flex gap-3 justify-content-center">
+                <button class="btn btn-light btn-lg px-4 rounded-pill fw-medium" onclick="closeLogoutModal()">Cancel</button>
+                <button class="btn btn-danger btn-lg px-4 rounded-pill fw-medium" onclick="confirmLogout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</button>
+            </div>
+        </div>
+    </div>
 
 <!-- ================= REUSABLE MODAL ================= -->
 <div class="modal fade" id="appModal" tabindex="-1">

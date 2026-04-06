@@ -76,9 +76,9 @@ function studentDashboard() {
             <tr><td class="fw-bold text-dark">Information Assurance and Security</td><td><div class="d-flex align-items-center gap-2"><img src="https://ui-avatars.com/api/?name=Prof+Elaine+S+Fernandez&background=random" class="avatar-sm"> Prof. Elaine S. Fernandez</div></td><td class="fw-bold text-success">97%</td><td><span class="badge badge-soft-success">Outstanding</span></td></tr>
         </tbody></table></div></div></div>
         <div class="col-lg-5"><div class="edutrack-card"><h5 class="card-title mb-4">Upcoming Deadlines</h5>
-            <div class="d-flex gap-3 mb-3 border-bottom pb-3"><div class="bg-danger bg-opacity-10 text-danger rounded px-3 py-2 text-center"><div class="fw-bold fs-5">08</div><small>APR</small></div><div><h6 class="fw-bold mb-1">Persona Mapping Case Study</h6><p class="small text-muted mb-1">Human Computer Interaction - Prof. Aileen M. Dela Cruz</p><span class="badge bg-danger">Due in 2 days</span></div></div>
-            <div class="d-flex gap-3 mb-3 border-bottom pb-3"><div class="bg-primary bg-opacity-10 text-primary rounded px-3 py-2 text-center"><div class="fw-bold fs-5">10</div><small>APR</small></div><div><h6 class="fw-bold mb-1">SQL Optimization Challenge</h6><p class="small text-muted mb-1">Database Systems - Dr. Carlo T. Ramirez</p><span class="badge bg-primary">Due in 4 days</span></div></div>
-            <div class="d-flex gap-3"><div class="bg-secondary bg-opacity-10 text-secondary rounded px-3 py-2 text-center"><div class="fw-bold fs-5">12</div><small>APR</small></div><div><h6 class="fw-bold mb-1">Service Blueprint Pitch</h6><p class="small text-muted mb-1">Systems Integration and Architecture - Ms. Hazel P. Dimaano</p><span class="badge bg-secondary">Upcoming</span></div></div>
+            <div class="d-flex gap-3 mb-3 border-bottom pb-3"><div class="deadline-date-chip deadline-date-danger"><div class="fw-bold fs-5">08</div><small>APR</small></div><div><h6 class="fw-bold mb-1">Persona Mapping Case Study</h6><p class="small text-muted mb-1">Human Computer Interaction - Prof. Aileen M. Dela Cruz</p><span class="badge bg-danger">Due in 2 days</span></div></div>
+            <div class="d-flex gap-3 mb-3 border-bottom pb-3"><div class="deadline-date-chip deadline-date-primary"><div class="fw-bold fs-5">10</div><small>APR</small></div><div><h6 class="fw-bold mb-1">SQL Optimization Challenge</h6><p class="small text-muted mb-1">Database Systems - Dr. Carlo T. Ramirez</p><span class="badge bg-primary">Due in 4 days</span></div></div>
+            <div class="d-flex gap-3"><div class="deadline-date-chip deadline-date-secondary"><div class="fw-bold fs-5">12</div><small>APR</small></div><div><h6 class="fw-bold mb-1">Service Blueprint Pitch</h6><p class="small text-muted mb-1">Systems Integration and Architecture - Ms. Hazel P. Dimaano</p><span class="badge bg-secondary">Upcoming</span></div></div>
         </div></div>
     </div>`;
 }
@@ -93,17 +93,17 @@ function studentGrades() {
         <tr><td class="text-muted">SIA-240</td><td class="fw-bold">Systems Integration and Architecture</td><td>3.0</td><td>89%</td><td>92%</td><td class="fw-bold text-primary fs-5">91%</td><td><span class="badge badge-soft-success">Passed</span></td></tr>
         <tr><td class="text-muted">IAS-250</td><td class="fw-bold">Information Assurance and Security</td><td>3.0</td><td>95%</td><td>98%</td><td class="fw-bold text-success fs-5">97%</td><td><span class="badge badge-soft-success">Passed</span></td></tr>
     </tbody></table></div></div>
-    <div class="row g-4"><div class="col-md-4"><div class="edutrack-card text-center bg-primary bg-opacity-10 border-primary border-opacity-25 py-4"><h1 class="display-4 fw-bold text-primary mb-0">3.88</h1><p class="text-muted fw-medium mt-2 mb-0">Cumulative GPA</p></div></div>
-    <div class="col-md-4"><div class="edutrack-card text-center bg-success bg-opacity-10 border-success border-opacity-25 py-4"><h1 class="display-4 fw-bold text-success mb-0">18</h1><p class="text-muted fw-medium mt-2 mb-0">Credits Earned</p></div></div>
-    <div class="col-md-4"><div class="edutrack-card text-center bg-warning bg-opacity-10 border-warning border-opacity-25 py-4"><h1 class="display-4 fw-bold text-warning mb-0">91.7%</h1><p class="text-muted fw-medium mt-2 mb-0">Overall Average</p></div></div></div>`;
+    <div class="row g-4"><div class="col-md-4"><div class="edutrack-card stat-soft-card stat-soft-card-primary text-center py-4"><h1 class="display-4 fw-bold stat-soft-value stat-soft-value-primary mb-0">3.88</h1><p class="text-muted fw-medium mt-2 mb-0">Cumulative GPA</p></div></div>
+    <div class="col-md-4"><div class="edutrack-card stat-soft-card stat-soft-card-success text-center py-4"><h1 class="display-4 fw-bold stat-soft-value stat-soft-value-success mb-0">18</h1><p class="text-muted fw-medium mt-2 mb-0">Credits Earned</p></div></div>
+    <div class="col-md-4"><div class="edutrack-card stat-soft-card stat-soft-card-warning text-center py-4"><h1 class="display-4 fw-bold stat-soft-value stat-soft-value-warning mb-0">91.7%</h1><p class="text-muted fw-medium mt-2 mb-0">Overall Average</p></div></div></div>`;
 }
 
 function studentAttendance() {
     return `<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2"><div><h3 class="fw-bold mb-1">Attendance Record</h3><p class="text-muted mb-0">Your daily presence and absences.</p></div><button class="btn btn-outline-primary" onclick="showToast('Calendar','Switching to calendar view','primary')"><i class="fas fa-calendar-alt me-2"></i>Calendar View</button></div>
     <div class="row g-4 mb-4">
-        <div class="col-md-4"><div class="edutrack-card bg-success bg-opacity-10 border-success border-opacity-25 text-center py-4"><h1 class="display-4 fw-bold text-success mb-0">97%</h1><p class="text-muted fw-medium mt-2 mb-0">Overall Attendance</p></div></div>
-        <div class="col-md-4"><div class="edutrack-card bg-warning bg-opacity-10 border-warning border-opacity-25 text-center py-4"><h1 class="display-4 fw-bold text-warning mb-0">2</h1><p class="text-muted fw-medium mt-2 mb-0">Total Absences</p></div></div>
-        <div class="col-md-4"><div class="edutrack-card bg-primary bg-opacity-10 border-primary border-opacity-25 text-center py-4"><h1 class="display-4 fw-bold text-primary mb-0">1</h1><p class="text-muted fw-medium mt-2 mb-0">Late Arrivals</p></div></div>
+        <div class="col-md-4"><div class="edutrack-card stat-soft-card stat-soft-card-success text-center py-4"><h1 class="display-4 fw-bold stat-soft-value stat-soft-value-success mb-0">97%</h1><p class="text-muted fw-medium mt-2 mb-0">Overall Attendance</p></div></div>
+        <div class="col-md-4"><div class="edutrack-card stat-soft-card stat-soft-card-warning text-center py-4"><h1 class="display-4 fw-bold stat-soft-value stat-soft-value-warning mb-0">2</h1><p class="text-muted fw-medium mt-2 mb-0">Total Absences</p></div></div>
+        <div class="col-md-4"><div class="edutrack-card stat-soft-card stat-soft-card-primary text-center py-4"><h1 class="display-4 fw-bold stat-soft-value stat-soft-value-primary mb-0">1</h1><p class="text-muted fw-medium mt-2 mb-0">Late Arrivals</p></div></div>
     </div>
     <div class="edutrack-card"><h5 class="card-title mb-4">Recent Attendance Logs</h5><div class="list-group list-group-flush">
         ${attendanceRow('fa-check-circle','success','Present - Full Day','April 5, 2026','Verified','success')}
@@ -149,7 +149,7 @@ function studentNotifications() {
     return `<div class="d-flex justify-content-between align-items-center mb-4"><div><h3 class="fw-bold mb-1">Notifications</h3><p class="text-muted mb-0">Stay updated with your academic activities.</p></div><button class="btn btn-outline-primary btn-sm" onclick="showToast('Done','All notifications marked as read','success')">Mark All Read</button></div>
     <div class="edutrack-card">
         ${notifRow('fa-exclamation-triangle','warning','Study Alert','Your Database Systems score is below your target. Review joins and indexing this week.','2 hours ago',true)}
-        ${notifRow('fa-calendar','primary','Assignment Deadline','Persona Mapping Case Study is due in 2 days. Submit via the portal.','5 hours ago',true)}
+        ${notifRow('fa-calendar-days','primary','Assignment Deadline','Persona Mapping Case Study is due in 2 days. Submit via the portal.','5 hours ago',true)}
         ${notifRow('fa-comment','success','Teacher Feedback','Dr. Carlo T. Ramirez left feedback on your latest SQL challenge.','1 day ago',true)}
         ${notifRow('fa-bullhorn','info','School Announcement','Mid-semester break starts October 20. Classes resume October 28.','2 days ago',false)}
         ${notifRow('fa-trophy','warning','Achievement Unlocked','You scored in the Top 5% for Web Systems and Technologies this semester!','3 days ago',false)}

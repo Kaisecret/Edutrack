@@ -172,14 +172,28 @@ function getCurrentSection() {
 }
 
 function switchView(viewId) {
-    document.querySelectorAll('.view').forEach(view => view.classList.remove('active'));
-    document.getElementById(viewId)?.classList.add('active');
+    document.querySelectorAll('.view').forEach(view => {
+        view.classList.remove('active');
+        view.style.display = 'none';
+    });
+    const target = document.getElementById(viewId);
+    if (target) {
+        target.classList.add('active');
+        target.style.display = viewId === 'view-auth' ? 'flex' : 'block';
+    }
     closeNotifications();
 }
 
 function showAuthForm(formId) {
-    document.querySelectorAll('.auth-form').forEach(form => form.classList.remove('active'));
-    document.getElementById(formId)?.classList.add('active');
+    document.querySelectorAll('.auth-form').forEach(form => {
+        form.classList.remove('active');
+        form.style.display = 'none';
+    });
+    const target = document.getElementById(formId);
+    if (target) {
+        target.classList.add('active');
+        target.style.display = 'block';
+    }
 }
 
 function togglePassword(btn) {
@@ -208,12 +222,23 @@ function processLogin() {
 }
 
 function logout() {
+    document.getElementById('logoutModal').style.display = 'flex';
+}
+
+function closeLogoutModal() {
+    document.getElementById('logoutModal').style.display = 'none';
+}
+
+function confirmLogout() {
+    closeLogoutModal();
     currentRole = null;
     currentTabIndex = 0;
     destroyCharts();
-    switchView('view-landing');
+    switchView('view-auth');
+    showAuthForm('auth-login');
     closeSidebar();
     setLoginRole('student');
+    showToast('Logged Out', 'You have been successfully logged out.', 'success');
 }
 
 function setupDashboard(role) {
@@ -320,20 +345,30 @@ function navigateToNotifications() {
 
 function toggleSidebar() {
     document.getElementById('sidebar').classList.toggle('show');
-    document.getElementById('sidebarOverlay').classList.toggle('show');
+    const overlay = document.getElementById('sidebarOverlay');
+    overlay.classList.toggle('show');
+    overlay.style.display = overlay.classList.contains('show') ? 'block' : 'none';
 }
 
 function closeSidebar() {
     document.getElementById('sidebar').classList.remove('show');
-    document.getElementById('sidebarOverlay').classList.remove('show');
+    const overlay = document.getElementById('sidebarOverlay');
+    overlay.classList.remove('show');
+    overlay.style.display = 'none';
 }
 
 function toggleNotifications() {
-    document.getElementById('notifDropdown').classList.toggle('show');
+    const notif = document.getElementById('notifDropdown');
+    notif.classList.toggle('show');
+    notif.style.display = notif.classList.contains('show') ? 'block' : 'none';
 }
 
 function closeNotifications() {
-    document.getElementById('notifDropdown')?.classList.remove('show');
+    const notif = document.getElementById('notifDropdown');
+    if (notif) {
+        notif.classList.remove('show');
+        notif.style.display = 'none';
+    }
 }
 
 function markAllRead() {
@@ -525,6 +560,13 @@ function closeModal() {
     const modalEl = document.getElementById('appModal');
     const modal = bootstrap.Modal.getInstance(modalEl);
     if (modal) modal.hide();
+    
+    setTimeout(() => {
+        document.body.classList.remove('modal-open');
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+        document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+    }, 300);
 }
 
 function showToast(title, message, type = 'primary') {
