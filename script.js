@@ -6,10 +6,11 @@
 let currentRole = null;
 let currentTabIndex = 0;
 let charts = {};
+const SESSION_STORAGE_KEY = 'edutrackSession';
 
 const DATA = {
     students: [
-        { id: 1, name: 'Venus Rodgelyn C. Baybayon', section: 'BSIT-1A', course: 'BS Information Technology', gpa: 3.88, attendance: 97, status: 'Excellent', avatar: 'VB', color: 'primary', grades: { prelim: 91, midterm: 94, finals: 93, finalGrade: 93 } },
+        { id: 1, name: 'Venus Rodgelyn C. Baybayon', section: 'BSIT-3B', course: 'BS Information Technology', gpa: 3.88, attendance: 97, status: 'Excellent', avatar: 'VB', color: 'primary', grades: { prelim: 91, midterm: 94, finals: 93, finalGrade: 93 } },
         { id: 2, name: 'Althea Mae P. Sarmiento', section: 'BSIT-1A', course: 'BS Information Technology', gpa: 3.91, attendance: 98, status: 'Outstanding', avatar: 'AS', color: 'success', grades: { prelim: 93, midterm: 96, finals: 95, finalGrade: 95 } },
         { id: 3, name: 'John Mark D. Salazar', section: 'BSIT-1A', course: 'BS Information Technology', gpa: 2.84, attendance: 83, status: 'At Risk', avatar: 'JS', color: 'warning', grades: { prelim: 79, midterm: 82, finals: 80, finalGrade: 80 } },
         { id: 4, name: 'Camille A. Navarro', section: 'BSIT-1A', course: 'BS Information Technology', gpa: 3.47, attendance: 94, status: 'Good', avatar: 'CN', color: 'info', grades: { prelim: 85, midterm: 87, finals: 86, finalGrade: 86 } },
@@ -17,21 +18,21 @@ const DATA = {
         { id: 6, name: 'Princess Anne L. Cortez', section: 'BSIT-2B', course: 'BS Information Technology', gpa: 3.76, attendance: 95, status: 'Excellent', avatar: 'PC', color: 'primary', grades: { prelim: 89, midterm: 92, finals: 91, finalGrade: 91 } },
         { id: 7, name: 'Miguel Angelo S. Fabillar', section: 'BSIT-2B', course: 'BS Information Technology', gpa: 3.83, attendance: 96, status: 'Outstanding', avatar: 'MF', color: 'primary', grades: { prelim: 88, midterm: 91, finals: 90, finalGrade: 90 } },
         { id: 8, name: 'Hannah Joy T. Villanueva', section: 'BSIT-2B', course: 'BS Information Technology', gpa: 3.94, attendance: 99, status: 'Outstanding', avatar: 'HV', color: 'success', grades: { prelim: 95, midterm: 97, finals: 96, finalGrade: 96 } },
-        { id: 9, name: 'Claire Denise M. Alonzo', section: 'BSIT-3C', course: 'BS Information Technology', gpa: 3.68, attendance: 93, status: 'Good', avatar: 'CA', color: 'success', grades: { prelim: 87, midterm: 89, finals: 88, finalGrade: 88 } },
-        { id: 10, name: 'Joshua N. Cabral', section: 'BSIT-3C', course: 'BS Information Technology', gpa: 3.22, attendance: 88, status: 'Active', avatar: 'JC', color: 'primary', grades: { prelim: 83, midterm: 85, finals: 84, finalGrade: 84 } },
-        { id: 11, name: 'Louise Anne P. Serrano', section: 'BSIT-3C', course: 'BS Information Technology', gpa: 3.54, attendance: 92, status: 'Good', avatar: 'LS', color: 'primary', grades: { prelim: 88, midterm: 90, finals: 89, finalGrade: 89 } },
-        { id: 12, name: 'Kevin Troy L. Molina', section: 'BSIT-3C', course: 'BS Information Technology', gpa: 2.98, attendance: 81, status: 'Warning', avatar: 'KM', color: 'warning', grades: { prelim: 78, midterm: 81, finals: 80, finalGrade: 80 } }
+        { id: 9, name: 'Claire Denise M. Alonzo', section: 'BSIT-3B', course: 'BS Information Technology', gpa: 3.68, attendance: 93, status: 'Good', avatar: 'CA', color: 'success', grades: { prelim: 87, midterm: 89, finals: 88, finalGrade: 88 } },
+        { id: 10, name: 'Joshua N. Cabral', section: 'BSIT-3B', course: 'BS Information Technology', gpa: 3.22, attendance: 88, status: 'Active', avatar: 'JC', color: 'primary', grades: { prelim: 83, midterm: 85, finals: 84, finalGrade: 84 } },
+        { id: 11, name: 'Louise Anne P. Serrano', section: 'BSIT-3B', course: 'BS Information Technology', gpa: 3.54, attendance: 92, status: 'Good', avatar: 'LS', color: 'primary', grades: { prelim: 88, midterm: 90, finals: 89, finalGrade: 89 } },
+        { id: 12, name: 'Kevin Troy L. Molina', section: 'BSIT-3B', course: 'BS Information Technology', gpa: 2.98, attendance: 81, status: 'Warning', avatar: 'KM', color: 'warning', grades: { prelim: 78, midterm: 81, finals: 80, finalGrade: 80 } }
     ],
     teachers: [
         { id: 1, name: 'Prof. Aileen M. Dela Cruz', subject: 'Human Computer Interaction', section: 'BSIT-1A', avatar: 'AC', color: 'primary' },
         { id: 2, name: 'Engr. Patrick R. Valencia', subject: 'Network Administration', section: 'BSIT-2B', avatar: 'PV', color: 'info' },
-        { id: 3, name: 'Ms. Joanna B. Morales', subject: 'Web Systems and Technologies', section: 'BSIT-3C', avatar: 'JM', color: 'success' },
+        { id: 3, name: 'Ms. Joanna B. Morales', subject: 'Web Systems and Technologies', section: 'BSIT-3B', avatar: 'JM', color: 'success' },
         { id: 4, name: 'Dr. Carlo T. Ramirez', subject: 'Database Systems', section: 'BSIT-1A', avatar: 'CR', color: 'warning' },
         { id: 5, name: 'Prof. Elaine S. Fernandez', subject: 'Information Assurance and Security', section: 'BSIT-2B', avatar: 'EF', color: 'dark' },
-        { id: 6, name: 'Ms. Hazel P. Dimaano', subject: 'Systems Integration and Architecture', section: 'BSIT-3C', avatar: 'HD', color: 'secondary' }
+        { id: 6, name: 'Ms. Hazel P. Dimaano', subject: 'Systems Integration and Architecture', section: 'BSIT-3B', avatar: 'HD', color: 'secondary' }
     ],
     parents: [
-        { id: 1, name: 'Celyn Coloso', child: 'Venus Rodgelyn C. Baybayon', section: 'BSIT-1A', email: 'celyn.coloso@edutrack.edu' },
+        { id: 1, name: 'Celyn Coloso', child: 'Venus Rodgelyn C. Baybayon', section: 'BSIT-3B', email: 'celyn.coloso@edutrack.edu' },
         { id: 2, name: 'Maricel Sarmiento', child: 'Althea Mae P. Sarmiento', section: 'BSIT-1A', email: 'maricel.sarmiento@email.com' },
         { id: 3, name: 'Ramon Fabillar', child: 'Miguel Angelo S. Fabillar', section: 'BSIT-2B', email: 'ramon.fabillar@email.com' }
     ],
@@ -65,7 +66,7 @@ const DATA = {
         { id: 1, section: 'BSIT-1A', name: 'Quiz #1 - Interaction Design', maxScore: 50, date: '2026-04-01', status: 'Graded' },
         { id: 2, section: 'BSIT-1A', name: 'Midterm UX Case Analysis', maxScore: 100, date: '2026-04-10', status: 'Pending' },
         { id: 3, section: 'BSIT-2B', name: 'Routing and Switching Quiz', maxScore: 40, date: '2026-04-02', status: 'Graded' },
-        { id: 4, section: 'BSIT-3C', name: 'API Integration Project', maxScore: 100, date: '2026-04-05', status: 'Pending' }
+        { id: 4, section: 'BSIT-3B', name: 'API Integration Project', maxScore: 100, date: '2026-04-05', status: 'Pending' }
     ],
     monthlyGrades: {
         labels: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
@@ -110,7 +111,7 @@ const DATA = {
 };
 
 const ROLE_META = {
-    student: { name: 'Venus Rodgelyn C. Baybayon', label: 'BS Information Technology', avatar: 'https://ui-avatars.com/api/?name=Venus+Rodgelyn+C.+Baybayon&background=4f46e5&color=fff' },
+    student: { name: 'Venus Rodgelyn C. Baybayon', label: 'BS Information Technology - 3B', avatar: 'https://ui-avatars.com/api/?name=Venus+Rodgelyn+C.+Baybayon&background=4f46e5&color=fff' },
     teacher: { name: 'Prof. Aileen M. Dela Cruz', label: 'Teacher', avatar: 'https://ui-avatars.com/api/?name=Prof.+Aileen+M.+Dela+Cruz&background=0ea5e9&color=fff' },
     parent: { name: 'Celyn Coloso', label: 'Parent', avatar: 'https://ui-avatars.com/api/?name=Celyn+Coloso&background=10b981&color=fff' },
     admin: { name: 'Admin User', label: 'Super Admin', avatar: 'https://ui-avatars.com/api/?name=Admin+User&background=1f2937&color=fff' }
@@ -184,6 +185,42 @@ function switchView(viewId) {
     closeNotifications();
 }
 
+function saveDashboardSession() {
+    if (!currentRole) return;
+    localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify({
+        role: currentRole,
+        tab: currentTabIndex
+    }));
+}
+
+function clearDashboardSession() {
+    localStorage.removeItem(SESSION_STORAGE_KEY);
+}
+
+function restoreDashboardSession() {
+    const raw = localStorage.getItem(SESSION_STORAGE_KEY);
+    if (!raw) return;
+
+    try {
+        const session = JSON.parse(raw);
+        if (!session?.role || !sidebarConfig[session.role]) return;
+
+        currentRole = session.role;
+        currentTabIndex = Number.isInteger(session.tab) ? session.tab : 0;
+        if (currentTabIndex < 0 || currentTabIndex >= sidebarConfig[session.role].length) {
+            currentTabIndex = 0;
+        }
+        switchView('view-dashboard');
+        setupDashboard(session.role);
+
+        const links = document.querySelectorAll('#dynamic-sidebar a');
+        links.forEach(anchor => anchor.classList.remove('active'));
+        if (links[currentTabIndex]) links[currentTabIndex].classList.add('active');
+    } catch (error) {
+        clearDashboardSession();
+    }
+}
+
 function showAuthForm(formId) {
     document.querySelectorAll('.auth-form').forEach(form => {
         form.classList.remove('active');
@@ -234,6 +271,7 @@ function confirmLogout() {
     currentRole = null;
     currentTabIndex = 0;
     destroyCharts();
+    clearDashboardSession();
     switchView('view-auth');
     showAuthForm('auth-login');
     closeSidebar();
@@ -245,12 +283,14 @@ function setupDashboard(role) {
     const meta = ROLE_META[role];
     if (!meta) return;
 
+    currentRole = role;
     document.getElementById('user-name').innerText = meta.name;
     document.getElementById('user-role').innerText = meta.label;
     document.getElementById('user-avatar').src = meta.avatar;
     generateSidebar(role);
     populateNotifications(role);
     loadTabContent(role, currentTabIndex);
+    saveDashboardSession();
 }
 
 function generateSidebar(role) {
@@ -267,6 +307,7 @@ function switchTab(role, index, el) {
     document.querySelectorAll('#dynamic-sidebar a').forEach(anchor => anchor.classList.remove('active'));
     if (el) el.classList.add('active');
     loadTabContent(role, index);
+    saveDashboardSession();
     if (window.innerWidth < 992) closeSidebar();
 }
 
@@ -283,8 +324,23 @@ function loadTabContent(role, index) {
     if (!content || !item) return;
 
     content.innerHTML = `<div class="tab-pane-custom">${getPageContent(role, index)}</div>`;
+    syncVenusSectionLabels(content);
     document.querySelector('#topbar .topbar-search input')?.setAttribute('placeholder', getSearchPlaceholder(role));
     initializeSectionView(role, item.section);
+}
+
+function syncVenusSectionLabels(container = document) {
+    if (!container) return;
+    const replacements = [
+        ['BSIT - Section 1A', 'BSIT - Section 3B'],
+        ['BSIT - Section 3A', 'BSIT - Section 3B'],
+        ['BS Information Technology - 3A', 'BS Information Technology - 3B']
+    ];
+    let html = container.innerHTML;
+    replacements.forEach(([from, to]) => {
+        html = html.split(from).join(to);
+    });
+    container.innerHTML = html;
 }
 
 function initializeSectionView(role, section) {
@@ -676,4 +732,5 @@ document.addEventListener('click', function (event) {
 
 document.addEventListener('DOMContentLoaded', () => {
     setLoginRole('student');
+    restoreDashboardSession();
 });

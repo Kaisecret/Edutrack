@@ -838,6 +838,7 @@ body {
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
+    height: 100%;
 }
 .metric-icon {
     width: 56px; height: 56px;
@@ -860,6 +861,12 @@ body {
 }
 .metric-info p {
     margin: 0; color: var(--text-muted); font-size: 0.85rem;
+}
+.metric-label {
+    min-height: 2.4em;
+    display: flex;
+    align-items: flex-end;
+    line-height: 1.2;
 }
 
 /* AI Insights Panel */
@@ -1295,6 +1302,35 @@ body {
     .notification-dropdown { left: 10px; right: 10px; width: auto; }
     #topbar { padding: 0 1rem; }
     .edutrack-card { padding: 1rem; }
+    .metric-card {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        flex-wrap: nowrap;
+        gap: 0.9rem;
+    }
+    .metric-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 1.25rem;
+    }
+    .metric-info {
+        min-width: 0;
+        flex: 1;
+    }
+    .metric-info p {
+        font-size: 0.8rem;
+        line-height: 1.35;
+        word-break: break-word;
+    }
+    .metric-label {
+        min-height: 0;
+        display: block;
+    }
+    .metric-info h3 {
+        font-size: 1.8rem;
+        line-height: 1.05;
+    }
     .hero-section { padding: 90px 0 40px; }
     .hero-section .display-3 { font-size: 1.75rem; }
     .hero-section .d-flex.gap-3.flex-wrap .hero-cta-btn,

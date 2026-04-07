@@ -45,7 +45,7 @@ function getPageContent(role, index) {
 }
 
 function metricCard(icon, iconClass, label, value, extra='') {
-    return `<div class="col-md-6 col-xl-3"><div class="edutrack-card metric-card"><div class="metric-icon ${iconClass}"><i class="fas ${icon}"></i></div><div class="metric-info"><p>${label}</p><h3>${value}</h3>${extra}</div></div></div>`;
+    return `<div class="col-md-6 col-xl-3"><div class="edutrack-card metric-card h-100"><div class="metric-icon ${iconClass}"><i class="fas ${icon}"></i></div><div class="metric-info"><p class="metric-label">${label}</p><h3>${value}</h3>${extra}</div></div></div>`;
 }
 
 function studentDashboard() {
@@ -283,7 +283,7 @@ function teacherGrades() {
             <select class="form-select w-auto" id="teacher-grade-section-filter" onchange="renderTeacherGradeTable(this.value)">
                 <option>BSIT-1A</option>
                 <option>BSIT-2B</option>
-                <option>BSIT-3C</option>
+                <option>BSIT-3B</option>
             </select>
             <button class="btn btn-success" onclick="saveAllGrades(this)"><i class="fas fa-save me-2"></i>Save All</button>
         </div>
@@ -295,7 +295,7 @@ function teacherGrades() {
             <select class="form-select w-auto" id="teacher-exam-section-filter" onchange="renderTeacherExamList(this.value)">
                 <option>BSIT-1A</option>
                 <option>BSIT-2B</option>
-                <option>BSIT-3C</option>
+                <option>BSIT-3B</option>
             </select>
             <button class="btn btn-primary btn-sm" onclick="showTeacherExamCreateModal()"><i class="fas fa-plus me-1"></i>New Assessment</button>
         </div>
@@ -311,7 +311,7 @@ function gradeRow(name,p,m,f,total,badge) {
 }
 
 function teacherAttendance() {
-    return `<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2"><div><h3 class="fw-bold mb-1">Attendance</h3><p class="text-muted mb-0">Record daily student attendance.</p></div><div class="d-flex gap-2 flex-wrap"><select class="form-select w-auto" id="teacher-attendance-section-filter" onchange="renderTeacherAttendanceTable(this.value)"><option>BSIT-1A</option><option>BSIT-2B</option><option>BSIT-3C</option></select><input type="date" class="form-control w-auto" value="2026-04-06"><button class="btn btn-success" onclick="saveAttendance(this)"><i class="fas fa-save me-2"></i>Save</button></div></div>
+    return `<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2"><div><h3 class="fw-bold mb-1">Attendance</h3><p class="text-muted mb-0">Record daily student attendance.</p></div><div class="d-flex gap-2 flex-wrap"><select class="form-select w-auto" id="teacher-attendance-section-filter" onchange="renderTeacherAttendanceTable(this.value)"><option>BSIT-1A</option><option>BSIT-2B</option><option>BSIT-3B</option></select><input type="date" class="form-control w-auto" value="2026-04-06"><button class="btn btn-success" onclick="saveAttendance(this)"><i class="fas fa-save me-2"></i>Save</button></div></div>
     <div class="edutrack-card"><div class="table-responsive"><table class="table table-custom"><thead><tr><th>#</th><th>Student Name</th><th>Present</th><th>Late</th><th>Absent</th><th>Notes</th></tr></thead><tbody id="teacher-attendance-table-body"></tbody></table></div></div>`;
 }
 function attendRow(n,name,status) {
@@ -319,7 +319,7 @@ function attendRow(n,name,status) {
 }
 
 function teacherStudents() {
-    return `<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2"><div><h3 class="fw-bold mb-1">Student Profiles</h3><p class="text-muted mb-0">View and manage student information.</p></div><div class="d-flex gap-2 flex-wrap"><select class="form-select w-auto" id="teacher-student-section-filter" onchange="renderTeacherStudentProfiles(this.value)"><option>BSIT-1A</option><option>BSIT-2B</option><option>BSIT-3C</option></select><input type="text" class="form-control w-auto" placeholder="Search students..." style="max-width:250px;"></div></div>
+    return `<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2"><div><h3 class="fw-bold mb-1">Student Profiles</h3><p class="text-muted mb-0">View and manage student information.</p></div><div class="d-flex gap-2 flex-wrap"><select class="form-select w-auto" id="teacher-student-section-filter" onchange="renderTeacherStudentProfiles(this.value)"><option>BSIT-1A</option><option>BSIT-2B</option><option>BSIT-3B</option></select><input type="text" class="form-control w-auto" placeholder="Search students..." style="max-width:250px;"></div></div>
     <div class="row g-4" id="teacher-students-grid"></div>`;
 }
 function studentCard(name,grade,gpa,att,status) {

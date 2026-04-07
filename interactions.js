@@ -482,7 +482,7 @@ function renderAdminAttendanceSummary() {
     const summary = [
         { section: 'BSIT-1A', present: 34, late: 2, absent: 1, trend: 'Stable' },
         { section: 'BSIT-2B', present: 31, late: 3, absent: 2, trend: 'Watchlist' },
-        { section: 'BSIT-3C', present: 33, late: 1, absent: 2, trend: 'Improving' }
+        { section: 'BSIT-3B', present: 33, late: 1, absent: 2, trend: 'Improving' }
     ];
 
     tbody.innerHTML = summary.map(item => `<tr><td class="fw-bold">${item.section}</td><td>${item.present}</td><td>${item.late}</td><td>${item.absent}</td><td><span class="badge ${item.trend === 'Stable' ? 'badge-soft-success' : item.trend === 'Improving' ? 'badge-soft-primary' : 'badge-soft-warning'}">${item.trend}</span></td></tr>`).join('');
